@@ -19,7 +19,6 @@ status_codes = {200: 0,
                 405: 0,
                 500: 0}
 for line in sys.stdin:
-    i = i + 1
     status = ""
     fsize = ""
     try:
@@ -32,6 +31,7 @@ for line in sys.stdin:
         fsize = int(final_split[1])
     except Exception as e:
         continue
+    i = i + 1
     total_size = total_size + fsize
     if status in status_codes:
         status_codes[status] = status_codes[status] + 1

@@ -51,6 +51,6 @@ try:
         if i == 10:
             i = 0
             print_func(total_size, status_codes)
+    print_func(total_size, status_codes)
 except KeyboardInterrupt:
     print_func(total_size, status_codes)
-    raise

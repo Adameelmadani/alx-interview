@@ -33,21 +33,16 @@ def print_func(t_size, s_codes):
 try:
     for line in sys.stdin:
         i = i + 1
-        status = ""
-        fsize = ""
-        final_split = []
+        status = 0
+        fsize = 0
+        final_split = line.split()
         try:
-            ln = line.strip()
-            split1 = ln.split(" - ", maxsplit=1)
-            split2 = split1[1].split("] ", maxsplit=1)
-            split3 = split2[1].split("\"GET /projects/260 HTTP/1.1\" ")
-            final_split = split3[1].split(" ", maxsplit=1)
-            fsize = int(final_split[1])
+            fsize = int(final_split[-1])
             total_size = total_size + fsize
         except Exception as e:
             continue
         try:
-            status = int(final_split[0])
+            status = int(final_split[-2])
             if status in status_codes.keys():
                 status_codes[status] = status_codes[status] + 1
         except Exception as e:

@@ -38,4 +38,6 @@ def validUTF8(data):
             continuation = continuation - 1
         else:
             return False
+    if continuation != 0:
+        return False
     return True

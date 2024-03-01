@@ -9,7 +9,7 @@ def makeChange(coins, total):
     listed_coins = sorted(coins)
     n = len(listed_coins)
     if n == 0:
-        return 0
+        return -1
     number = 0
     for i in range(n - 1, -1, -1):
         if total == 0:
